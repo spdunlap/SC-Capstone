@@ -26,7 +26,7 @@
                     * Main content; Property manager contact information
                     * Footer
         * User Flow
-        * Wireframes (1 wireframe per page minimum, hand-drawn is ok!)
+        * [Wireframes](https://github.com/spdunlap/SC-Capstone/blob/master/documents/wireframes/SDCapstoneHome.pdf)
         * Color pallet 
           * https://coolors.co/d8f3dc-b7e4c7-95d5b2-74c69d-52b788-40916c-2d6a4f-1b4332-081c15
           * https://coolors.co/000000-14213d-1d4937-e5e5e5-ffffff
