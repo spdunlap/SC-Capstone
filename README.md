@@ -1,7 +1,5 @@
 # Savvy Coders Capstone Project Overview
 
-## Overview
-
         * Definition of your audience - Tenants and prospective tenants in the STL area
         * Definition statement (I want to create a web application that...) for your project - I want to create a web application that will make managing my rental portfolio simple, effective, and efficient.
         * High level story (elevator pitch) - What if you could invest in real estate without the day to day headache of managing tenants via phone and email?
