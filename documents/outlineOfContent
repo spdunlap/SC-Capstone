@@ -1,0 +1,21 @@
+            * Home
+                * Properties
+                    * Header with nav
+                    * Main content; List of available rental properties with photos and description
+                    * Footer
+                * Maintenance Request;
+                    * Header with nav
+                    * Main content; Form to request routine maintenance
+                    * Footer
+                * Pay Rent
+                    * Header with nav
+                    * Main content; API payments
+                    * Footer
+                * Rental Application
+                    * Header with nav
+                    * Main content; Link or separate page depending on vendor
+                    * Footer
+                * Contact
+                    * Header with nav
+                    * Main content; Property manager contact information
+                    * Footer
