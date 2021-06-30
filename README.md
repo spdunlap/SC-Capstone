@@ -1,29 +1,38 @@
-# Savvy Coders Project Boilerplate Starter Kit
+# Savvy Coders Capstone Project Overview
 
 ## Overview
 
-This template repository contains several opinionated, 'starter' files and settings to help Savvy Coder students focus more time and energy on learning how to code and/or craft 'business logic' for projects and less time on configurations.
+        * Definition of your audience - Tenants and prospective tenants in the STL area
+        * Definition statement (I want to create a web application that...) for your project - I want to create a web application that will make managing my rental portfolio simple, effective, and efficient.
+        * High level story (elevator pitch) - What if you could invest in real estate without the day to day headache of managing tenants via phone and email?
+        * Outline of the content; 
+            * Home
+                * Properties
+                    * Header with nav
+                    * Main content; List of available rental properties with photos and description
+                    * Footer
+                * Maintenance Request;
+                    * Header with nav
+                    * Main content; Form to request routine maintenance
+                    * Footer
+                * Pay Rent
+                    * Header with nav
+                    * Main content; API payments
+                    * Footer
+                * Rental Application
+                    * Header with nav
+                    * Main content; Link or separate page depending on vendor
+                    * Footer
+                * Contact
+                    * Header with nav
+                    * Main content; Property manager contact information
+                    * Footer
+        * User Flow
+        * Wireframes (1 wireframe per page minimum, hand-drawn is ok!)
+        * Color pallet 
+          * https://coolors.co/d8f3dc-b7e4c7-95d5b2-74c69d-52b788-40916c-2d6a4f-1b4332-081c15
+          * https://coolors.co/000000-14213d-1d4937-e5e5e5-ffffff
+        * Site navigation and Nav elements like buttons
+        * Any third party APIs that will be used
+          * TBD
 
-In addition to a '.gitignore' and some VS Code specific extensions and settings, it includes the 'recommended' settings for:
-
-1. [ESLint](eslint.org)
-2. [Stylelint](stylelint.io)
-3. [Prettier](prettier.io)
-
-## Get Started
-
-**First and foremost,** make sure that your local machine is set up with all of the 'dev environment tooling' as per the instructions in the curriculum.
-
-Well, after establishing your directory structure on your local machine, (e.g. '~/Code/SavvyCoders'), clone the Savvy Starter Repo - essentially, there should be a button that says **Use this template.**
-
-> [Read more about using templates on GitHub here...](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
-
-Once this repo has been created on your GitHub, you can click on the button to 'clone' it as usual.
-
-Once it's `clone`d to your local machine, `cd` into the directory and **be sure to do:** `npm i` to get all of the dependencies installed. If you see any _errors_ (warnings are OK) on Windows, you may have to do `npm install`.
-
-Now, enter `code .` to open this project in VS Code, and look for a prompt to 'install some extensions' once inside VS Code (in the bottom `right` of your screen). You should install these.
-
-In your repo, feel free to update this README and make any other initial changes to files, etc. Then go ahead and do your usual `git` steps -- add, commit, and push.
-
-**Note:** This is a template repository, no need to 'fork it.
