@@ -42,15 +42,10 @@ import { Header, Nav, Main, Footer } from "/components";
 import * as state from "/store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
+import axios from "axios";
+import "./env";
 
 const router = new Navigo(window.location.origin);
-
-router
-  .on({
-    ":page": params => render(state[capitalize(params.page)]),
-    "/": () => render(state.Home)
-  })
-  .resolve();
 
 function render(st = state.Home) {
   document.querySelector("#root").innerHTML = `
@@ -62,3 +57,44 @@ function render(st = state.Home) {
   router.updatePageLinks();
 }
 render(state.home);
+
+router.hooks({
+  before: (done, params) => {
+    // Because not all routes pass params we have to guard against it being undefined
+    const page =
+      params && params.hasOwnProperty("page")
+        ? capitalize(params.page)
+        : "Properties";
+
+    switch (page) {
+      case "Properties":
+        axios
+          .get(
+            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.WEATHER_API_KEY}&q=st.%20louis`
+          )
+          .then(response => {
+            state.Properties.weather = {};
+            console.log(response, state.Properties.weather);
+            state.Properties.weather.city = response.data.name;
+            state.Properties.weather.temp = response.data.main.temp;
+            state.Properties.weather.feelsLike = response.data.main.feels_like;
+            state.Properties.weather.humidity = response.data.main.humidity;
+            state.Properties.weather.description =
+              response.data.weather[0]["description"];
+            done();
+          })
+          .catch(err => console.log(err));
+        break;
+
+      default:
+        done();
+    }
+  }
+});
+
+router
+  .on({
+    "/": () => render(state.Home),
+    ":page": params => render(state[capitalize(params.page)])
+  })
+  .resolve();
