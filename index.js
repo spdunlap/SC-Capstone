@@ -86,7 +86,6 @@ router.hooks({
           .catch(err => console.log(err));
         break;
 
-        switch (page) {
           case "Prospect":
             axios
               .get(`${process.env.API}/prospects`)
