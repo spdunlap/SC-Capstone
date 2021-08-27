@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
 const greetings = require("./routers/greetings");
+const prospects = require("./routers/propsects");
 
 dotenv.config();
 
@@ -46,6 +47,7 @@ app.use(express.json());
 app.use(logging);
 
 app.use(greetings);
+app.use(prospects);
 
 // Configuring Express Instance
 

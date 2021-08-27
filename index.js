@@ -86,6 +86,20 @@ router.hooks({
           .catch(err => console.log(err));
         break;
 
+        switch (page) {
+          case "Prospect":
+            axios
+              .get(`${process.env.API}/prospects`)
+              .then(response => {
+                state[page].prospects = response.data;
+                done();
+              })
+              .catch(error => {
+                console.log("Failed to get prospects", error);
+                done();
+              });
+            break;
+
       default:
         done();
     }
