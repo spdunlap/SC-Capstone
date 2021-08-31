@@ -1,39 +1,5 @@
 document.title = "Dunlap Properties LLC";
 
-// document.querySelector("#Kit4040").src = "../../assets/img/4040Kitchen.jpeg";
-
-// const unorderedList = document.createElement("ul");
-
-// // adds new ul element to the nav-bar
-// document.querySelector(".nav-bar").appendChild(unorderedList);
-
-// // creates new list item (li) elements
-// // const navItem = document.createElement("li");
-// // navItem.textContent = "Dunlap Properties LLC";
-// const navItem1 = document.createElement("li");
-// navItem1.textContent = "Home";
-// // navItem1.classList.add("hidden--mobile");
-// const navItem2 = document.createElement("li");
-// navItem2.textContent = "Properties";
-// // navItem2.classList.add("hidden--mobile");
-// const navItem3 = document.createElement("li");
-// navItem3.textContent = "Pay";
-// // navItem3.classList.add("hidden--mobile");
-// const navItem4 = document.createElement("li");
-// navItem4.textContent = "Maintenance";
-// // navItem4.classList.add("hidden--mobile");
-
-// adds the li elements to the ul in nav-bar
-// document.querySelector(".nav-bar > ul").appendChild(navItem);
-// document.querySelector(".nav-bar > ul").appendChild(navItem1);
-// document.querySelector(".nav-bar > ul").appendChild(navItem2);
-// document.querySelector(".nav-bar > ul").appendChild(navItem3);
-// document.querySelector(".nav-bar > ul").appendChild(navItem4);
-
-// document.querySelector(".fa-bars").addEventListener("click", () => {
-//   document.querySelector(".nav-bar > ul").classList.toggle("hidden--mobile");
-// });
-
 // importing all as a Module object
 // import * as components from "./components";
 // importing all by name
@@ -55,8 +21,53 @@ function render(st = state.Home) {
   ${Footer()}
   `;
   router.updatePageLinks();
+  addEventListeners(st);
 }
 render(state.home);
+
+function addEventListeners(st) {
+  // add event listeners to Nav items for navigation
+  document.querySelectorAll("nav a").forEach(navLink =>
+    navLink.addEventListener("click", event => {
+      event.preventDefault();
+      render(state[event.target.title]);
+    })
+  );
+
+  // add menu toggle to bars icon in nav bar
+  document
+    .querySelector(".fa-bars")
+    .addEventListener("click", () =>
+      document.querySelector("nav > ul").classList.toggle("hidden--mobile")
+    );
+
+  if (st.view === "Prospect") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      const inputList = event.target.elements;
+
+      const prospects = [];
+
+      const requestData = {
+        firstName: inputList.firstName.value,
+        lastName: inputList.lastName.value,
+        email: inputList.email.value,
+        property: inputList.property.value,
+        notes: inputList.notes.value
+      };
+
+      axios
+        .post(`${process.env.API}/prospects`, requestData)
+        .then(response => {
+          state.Prospect.prospects.push(response.data);
+          router.navigate("/properties");
+        })
+        .catch(error => {
+          console.log("Failed to Submit", error);
+        });
+    });
+  }
+}
 
 router.hooks({
   before: (done, params) => {
