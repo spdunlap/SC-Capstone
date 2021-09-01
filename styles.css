@@ -225,6 +225,11 @@ footer {
   width: 25%;
 }
 
+#map {
+height: 500px;
+width: 500px
+}
+
 #fs-frm input,
 #fs-frm select,
 #fs-frm textarea,
