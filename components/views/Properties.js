@@ -11,35 +11,12 @@ export default st => html`
 
   <div class="wrapper">
     <article class="main">
-    <img class="cover-img" src="${living4038}" />
-  </article>
+     <img class="cover-img" src="${living4038}" />
+    </article>
+
     <aside class="aside aside-1">
       <body style="height:100%">
-      <div id="map" style="height:100%"></div>
-      <script>
-        let map;
-
-          function initMap() {
-            const localContextMapView = new google.maps.localContext.LocalContextMapView({
-              element: document.getElementById("map"),
-              placeTypePreferences: [
-                { type: "restaurant" },
-                { type: "tourist_attraction" },
-              ],
-              maxPlaceCount: 12,
-            });
-            map = localContextMapView.map;
-            map.setOptions({
-              center: { lat: 51.507307, lng: -0.08114 },
-              zoom: 14,
-            });
-          }
-      </script>
-      <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXb21vKZd32zbUZfuetuEgMy3syM6GTbM&libraries=localContext&v=beta&callback=initMap">
-      </script>
-
-
+        <div id="map"></div>
       </body>
     </aside>
     <!-- <aside class="aside aside-2">Aside 2</aside> -->
@@ -47,9 +24,14 @@ export default st => html`
 
   <div class="wrapper2">
     <article class="main">
-    <img class="cover-img" src="${kitchen4034}" />
+      <img class="cover-img" src="${kitchen4034}" />
     </article>
-    <aside class="aside aside-1">Aside 1</aside>
+
+    <aside class="aside aside-1">
+      <body style="height:100%">
+        <div id="map2"></div>
+      </body>
+    </aside>
     <!-- <aside class="aside aside-2">Aside 2</aside> -->
   </div>
 

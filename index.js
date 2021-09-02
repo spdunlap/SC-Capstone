@@ -10,6 +10,7 @@ import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
 import "./env";
+import { Loader } from "@googlemaps/js-api-loader";
 
 const router = new Navigo(window.location.origin);
 
@@ -67,6 +68,41 @@ function addEventListeners(st) {
         });
     });
   }
+
+  if (st.view === "Properties") {
+    let map;
+
+    function initMap() {
+      const localContextMapView = new google.maps.localContext.LocalContextMapView({
+        element: document.getElementById("map"),
+        placeTypePreferences: [
+          { type: "restaurant" },
+          { type: "tourist_attraction" },
+        ],
+        maxPlaceCount: 12,
+      });
+      map = localContextMapView.map;
+      map.setOptions({
+        center: { lat: 51.507307, lng: -0.08114 },
+        zoom: 14,
+      });
+    }
+
+    const loader = new Loader({
+      apiKey: `${process.env.GOOGLE_API}`,
+      version: "weekly",
+      // ...additionalOptions,
+    });
+    loader.load().then(() => {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8,
+      });
+    });
+  }
+
+
+
 }
 
 router.hooks({
