@@ -95,8 +95,8 @@ function addEventListeners(st) {
     });
     loader.load().then(() => {
       map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 8,
+        center: { lat: 38.614, lng: -90.249 },
+        zoom: 13,
       });
     });
   }
