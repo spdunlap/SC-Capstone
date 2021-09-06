@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  background-color:#FFFFFF;
+  background-color:var(--text-secondary-color);
   /* padding: 2em; */
 }
 
@@ -125,11 +125,25 @@ footer {
   color: #FFFFFF;
 }
 
+.unitDescription {
+  text-align: left;
+}
+
+.description {
+  background-color: #E5E5E5;
+  margin: 30px;
+}
+
+.unitUL {
+  text-indent: 10px;
+  list-style-type: none;
+}
+
 .wrapper {
   display: flex;
   flex-flow: row wrap;
-  font-weight: bold;
-  text-align: center;
+  font-weight: normal;
+  text-align: left;
 }
 
 .wrapper2 {
@@ -155,7 +169,6 @@ footer {
 }
 
 .wrapper > * {
-  /* padding: 10px; */
   flex: 1 100%;
 }
 
@@ -201,7 +214,7 @@ footer {
   .main    { order: 1; }
   .mainProspect    { order: 1; }
   .aside-1 { order: 2; }
-  .aside-2 { order: 3; }
+  .description { order: 3; }
   .footer  { order: 4; }
 }
 

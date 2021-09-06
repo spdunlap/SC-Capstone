@@ -72,21 +72,21 @@ function addEventListeners(st) {
   if (st.view === "Properties") {
     let map;
 
-    function initMap() {
-      const localContextMapView = new google.maps.localContext.LocalContextMapView({
-        element: document.getElementById("map"),
-        placeTypePreferences: [
-          { type: "restaurant" },
-          { type: "tourist_attraction" },
-        ],
-        maxPlaceCount: 12,
-      });
-      map = localContextMapView.map;
-      map.setOptions({
-        center: { lat: 51.507307, lng: -0.08114 },
-        zoom: 14,
-      });
-    }
+    // function initMap() {
+    //   const localContextMapView = new google.maps.localContext.LocalContextMapView({
+    //     element: document.getElementById("map"),
+    //     placeTypePreferences: [
+    //       { type: "restaurant" },
+    //       { type: "tourist_attraction" },
+    //     ],
+    //     maxPlaceCount: 12,
+    //   });
+    //   map = localContextMapView.map;
+    //   map.setOptions({
+    //     center: { lat: 51.507307, lng: -0.08114 },
+    //     zoom: 14,
+    //   });
+    // }
 
     const loader = new Loader({
       apiKey: `${process.env.GOOGLE_API}`,
@@ -96,7 +96,7 @@ function addEventListeners(st) {
     loader.load().then(() => {
       map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: 38.614, lng: -90.249 },
-        zoom: 13,
+        zoom: 15,
       });
     });
   }
