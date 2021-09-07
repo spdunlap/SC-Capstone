@@ -12,7 +12,7 @@ export default st => html`
   <div class="wrapper">
 
     <article class="main">
-     <img class="cover-img" src="${living4038}" />
+     <img class="prop-img" src="${living4038}" />
     </article>
 
     <aside class="aside aside-1">
@@ -58,7 +58,7 @@ export default st => html`
 
   <!-- <div class="wrapper2">
     <article class="main">
-      <img class="cover-img" src="${kitchen4034}" />
+      <img class="prop-img" src="${kitchen4034}" />
     </article>
 
     <aside class="aside aside-1">

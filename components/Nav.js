@@ -9,7 +9,7 @@ export default links => html`
           `<li><a href="/${link.title}" title="${link.title}" data-navigo>${link.text}</a></li>`
       )}
     </ul>
-    <i class="fas fa-bars"></i>
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
   </nav>
 
 `;

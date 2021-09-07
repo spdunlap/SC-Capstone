@@ -6,6 +6,7 @@ export default () => html`
   <div class="wrapper.home">
   <article class="main">
   <img class="cover-img" src="${kitchen4040}" />
+  <h2 id="tagLine">Let us introduce you to home..</h2>
   </article>
   <!-- <aside class="aside aside-1">Aside 1</aside>
   <aside class="aside aside-2">Aside 2</aside> -->

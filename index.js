@@ -37,15 +37,15 @@ function addEventListeners(st) {
 
   // add menu toggle to bars icon in nav bar
   document
-    .querySelector(".fa-bars")
+    .querySelector(".fa-ellipsis-v")
     .addEventListener("click", () =>
       document.querySelector("nav > ul").classList.toggle("hidden--mobile")
     );
 
-    // document.querySelectorAll(".propButton").addEventListener("click", event => {
-    //     event.preventDefault();
-    //     render(state[event.target.title]);
-    //   });
+    document.querySelector(".propButton").addEventListener("click", event => {
+        event.preventDefault();
+        render(state.Prospect);
+      });
 
   if (st.view === "Prospect") {
     document.querySelector("form").addEventListener("submit", event => {
