@@ -42,6 +42,11 @@ function addEventListeners(st) {
       document.querySelector("nav > ul").classList.toggle("hidden--mobile")
     );
 
+    // document.querySelectorAll(".propButton").addEventListener("click", event => {
+    //     event.preventDefault();
+    //     render(state[event.target.title]);
+    //   });
+
   if (st.view === "Prospect") {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();

@@ -204,6 +204,10 @@ footer {
   background: hotpink;
 }
 
+.propButton {
+  padding: 5px;
+}
+
 @media all and (min-width: 600px) {
   .aside { flex: 1 0 0; }
 }

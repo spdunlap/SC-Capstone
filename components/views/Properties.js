@@ -21,7 +21,6 @@ export default st => html`
       </body>
     </aside>
     <article class="description">
-    <br>
     <h2 class="unitTitle" style="justify-content: center">4038 Russell Blvd. St. louis, MO 63110</h2>
       <br>
       <p class="unitDescription">
@@ -50,7 +49,7 @@ export default st => html`
         <br>
         <br>
         <p class="unitDescription">
-         Please call or text for more information!
+         Click to request more information --- <input type="button" name="Request Info" value="Request More Info!" class="propButton">
         </p>
     </article>
 
