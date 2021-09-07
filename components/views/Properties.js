@@ -1,5 +1,5 @@
 import html from "html-literal";
-import living4038 from "../../assets/images/IMG_1018.jpg";
+import living4038 from "../../assets/images/IMG_10182.jpg";
 import kitchen4034 from "../../assets/images/IMG_2041.jpeg";
 
 const kelvinToFahrenheit = kelvinTemp =>

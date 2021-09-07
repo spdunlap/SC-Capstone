@@ -24,7 +24,7 @@ function render(st = state.Home) {
   router.updatePageLinks();
   addEventListeners(st);
 }
-render(state.home);
+// render(state.home);
 
 function addEventListeners(st) {
   // add event listeners to Nav items for navigation
